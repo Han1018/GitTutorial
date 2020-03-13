@@ -4,7 +4,23 @@
 #include <iostream>
 using namespace System;
 bool Guess(int number) {
+//<<<<<<< HEAD
 	return 0;
+//=======
+	static int target = -1;
+	if (target == -1) {
+		Random r;
+		target = r.Next() % 100 + 1;
+	}
+	if (number > target) {
+		std::cout << "Smaller" << std::endl;
+		return false;
+	}
+	else if (number < target) {
+		std::cout << "Bigger" << std::endl;
+		return false;
+	}
+	return true;
 }
 int main(array<System::String ^> ^args)
 {
